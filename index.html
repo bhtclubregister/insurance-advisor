@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bima Seva - Premium Insurance Advisor</title>
+    <title>Bharat Bima Seva - Premium Insurance Advisor</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,9 +33,10 @@
         .bg-navbar-dark { background-color: #254f85 !important; }
         .nav-link-custom {
             color: white !important;
-            padding: 1rem 1.5rem !important;
+            padding: 1rem 1.25rem !important; /* Slightly reduced padding to help fit */
             border-right: 1px solid #3b649a;
             font-weight: 600;
+            white-space: nowrap;
         }
         .nav-link-custom:hover, .nav-link-custom.active {
             color: #f97316 !important;
@@ -67,9 +68,10 @@
             inset: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             object-position: right;
             opacity: 0.4;
+            filter: blur(0px);
             z-index: 0;
         }
         .hero-overlay {
@@ -87,7 +89,7 @@
             bottom: 0;
             width: 100%;
             background-color: rgba(11, 27, 54, 0.9);
-            backdrop-filter: blur(4px);
+            backdrop-filter: blur(0px);
             border-top: 1px solid #4a5568;
             z-index: 10;
         }
@@ -162,7 +164,7 @@
         .swiper-container-app .swiper-slide img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
         }
         .brand-overlay {
             position: absolute;
@@ -257,8 +259,9 @@
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
                 <!-- Logo -->
-                <a href="index.html" class="text-decoration-none">
-                    <img src="assets/images/logo.png" alt="Bima Seva Logo" class="img-fluid" style="height: 60px;">
+                <a href="index.html" class="text-decoration-none d-flex align-items-center gap-2">
+                    <img src="assets/images/logo.png" alt="Bharat Bima Seva Logo" class="img-fluid me-2" style="height: 60px;">
+                    <span class="fs-4 fw-bold text-primary-custom mb-0">Bharat Bima Seva</span>
                 </a>
 
                 <!-- Top Right Actions (Desktop) -->
@@ -319,7 +322,7 @@
 <!-- Hero Section -->
 <section class="hero-section">
     <!-- Background Image with Gradient Overlay -->
-    <img src="assets/images/portfolio/473411733_1766817154083320_7991205949878750875_n.jpg" alt="Advisor Background" class="hero-bg-img">
+    <img src="277775399_1139506043481104_6849116031605766161_n.jpg" alt="Advisor Background" class="hero-bg-img">
     <div class="hero-overlay"></div>
 
     <div class="container hero-content">
@@ -338,7 +341,7 @@
                     Providing the best insurance solutions to protect your family, your health and your future.
                 </p>
                 
-                <div class="d-flex flex-wrap gap-3">
+                <div class="d-flex flex-wrap gap-3 mb-5 pb-lg-5">
                     <a href="tel:+919876543210" class="btn btn-primary bg-accent border-0 px-4 py-3 fw-medium d-flex align-items-center gap-2 shadow">
                         <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
                         Call Now
@@ -448,7 +451,7 @@
         
         <div class="row g-4">
             <!-- Service 1 -->
-            <div class="col-md-6 col-lg-3">
+            <div class="col-lg-4 col-md-6">
                 <div class="card h-100 border-0 shadow-sm text-center p-4 service-card transition-all">
                     <div class="rounded-circle bg-primary-custom bg-opacity-10 text-primary-custom d-inline-flex align-items-center justify-content-center mx-auto mb-4" style="width: 64px; height: 64px;">
                         <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
@@ -461,7 +464,7 @@
                 </div>
             </div>
             <!-- Service 2 -->
-            <div class="col-md-6 col-lg-3">
+            <div class="col-lg-4 col-md-6">
                 <div class="card h-100 border-0 shadow-sm text-center p-4 service-card transition-all">
                     <div class="rounded-circle bg-primary-custom bg-opacity-10 text-primary-custom d-inline-flex align-items-center justify-content-center mx-auto mb-4" style="width: 64px; height: 64px;">
                         <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
@@ -474,7 +477,7 @@
                 </div>
             </div>
             <!-- Service 3 -->
-            <div class="col-md-6 col-lg-3">
+            <div class="col-lg-4 col-md-6">
                 <div class="card h-100 border-0 shadow-sm text-center p-4 service-card transition-all">
                     <div class="rounded-circle bg-primary-custom bg-opacity-10 text-primary-custom d-inline-flex align-items-center justify-content-center mx-auto mb-4" style="width: 64px; height: 64px;">
                         <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
@@ -486,19 +489,7 @@
                     </a>
                 </div>
             </div>
-            <!-- Service 4 -->
-            <div class="col-md-6 col-lg-3">
-                <div class="card h-100 border-0 shadow-sm text-center p-4 service-card transition-all">
-                    <div class="rounded-circle bg-primary-custom bg-opacity-10 text-primary-custom d-inline-flex align-items-center justify-content-center mx-auto mb-4" style="width: 64px; height: 64px;">
-                        <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    </div>
-                    <h5 class="fw-bold text-primary-custom mb-3">Investment Plans</h5>
-                    <p class="text-muted small mb-4">Build wealth over time with secure investment options tailored to your long term financial goals.</p>
-                    <a href="services.html" class="mt-auto text-decoration-none text-accent fw-bold small d-inline-flex align-items-center justify-content-center gap-1">
-                        Get Quote <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                    </a>
-                </div>
-            </div>
+
         </div>
         
         <style>
@@ -721,36 +712,36 @@
         <div class="swiper swiper-container-app">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <div class="brand-overlay">Bima Seva</div>
+                    <div class="brand-overlay">Bharat Bima Seva</div>
                     <img src="https://riskbirbal.com/assets/images/sets/easy-navigation.webp" alt="Easy Navigation">
                 </div>
                 <div class="swiper-slide">
-                    <div class="brand-overlay">Bima Seva</div>
+                    <div class="brand-overlay">Bharat Bima Seva</div>
                     <img src="https://riskbirbal.com/assets/images/sets/demystifying.webp" alt="Demystifying Insurance">
                 </div>
                 <div class="swiper-slide">
-                    <div class="brand-overlay">Bima Seva</div>
+                    <div class="brand-overlay">Bharat Bima Seva</div>
                     <img src="https://riskbirbal.com/assets/images/sets/insight.webp" alt="Insight & Advice">
                 </div>
                 <div class="swiper-slide">
-                    <div class="brand-overlay">Bima Seva</div>
+                    <div class="brand-overlay">Bharat Bima Seva</div>
                     <img src="https://riskbirbal.com/assets/images/sets/risk-assessment.webp" alt="Risk Assessment & Mitigation">
                 </div>
                 <!-- Duplicated slides to ensure Swiper has enough elements to loop seamlessly when slidesPerView is auto -->
                 <div class="swiper-slide">
-                    <div class="brand-overlay">Bima Seva</div>
+                    <div class="brand-overlay">Bharat Bima Seva</div>
                     <img src="https://riskbirbal.com/assets/images/sets/easy-navigation.webp" alt="Easy Navigation">
                 </div>
                 <div class="swiper-slide">
-                    <div class="brand-overlay">Bima Seva</div>
+                    <div class="brand-overlay">Bharat Bima Seva</div>
                     <img src="https://riskbirbal.com/assets/images/sets/demystifying.webp" alt="Demystifying Insurance">
                 </div>
                 <div class="swiper-slide">
-                    <div class="brand-overlay">Bima Seva</div>
+                    <div class="brand-overlay">Bharat Bima Seva</div>
                     <img src="https://riskbirbal.com/assets/images/sets/insight.webp" alt="Insight & Advice">
                 </div>
                 <div class="swiper-slide">
-                    <div class="brand-overlay">Bima Seva</div>
+                    <div class="brand-overlay">Bharat Bima Seva</div>
                     <img src="https://riskbirbal.com/assets/images/sets/risk-assessment.webp" alt="Risk Assessment & Mitigation">
                 </div>
             </div>
@@ -1015,7 +1006,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <!-- Main Footer -->
 <footer class="bg-primary-custom text-white py-4 border-top border-secondary text-center small">
     <div class="container">
-        <p class="mb-0">&copy; 2024 Bima Seva Insurance Advisor. All rights reserved.</p>
+        <p class="mb-0">&copy; 2024 Bharat Bima Seva Insurance Advisor. All rights reserved.</p>
     </div>
 </footer>
 
