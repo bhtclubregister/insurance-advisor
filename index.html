@@ -183,7 +183,7 @@
         /* Marquee */
         @keyframes scroll {
             0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-250px * 10)); }
+            100% { transform: translateX(-50%); }
         }
         .marquee-container {
             overflow: hidden;
@@ -194,7 +194,7 @@
         }
         .marquee-track {
             display: flex;
-            width: calc(250px * 20);
+            width: max-content;
             animation: scroll 80s linear infinite;
         }
         .marquee-track:hover {
@@ -319,7 +319,7 @@
 <!-- Hero Section -->
 <section class="hero-section">
     <!-- Background Image with Gradient Overlay -->
-    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Advisor Background" class="hero-bg-img">
+    <img src="assets/images/portfolio/473411733_1766817154083320_7991205949878750875_n.jpg" alt="Advisor Background" class="hero-bg-img">
     <div class="hero-overlay"></div>
 
     <div class="container hero-content">
@@ -631,6 +631,82 @@
     </div>
 </section>
 
+<!-- Graph Section -->
+<section class="py-5 bg-white border-bottom border-light">
+    <div class="container my-5">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold text-primary-custom text-uppercase">Claim Settlement Growth Over The Years</h2>
+            <div class="d-inline-block bg-primary-custom text-white px-4 py-2 rounded-pill fw-bold small mt-2 mb-4 tracking-wide shadow-sm">
+                CLAIM SETTLEMENT AMOUNT GROWTH (INDEX BASE YEAR 2015 = 100)
+            </div>
+            <div class="d-flex flex-wrap justify-content-center gap-3 gap-md-5 mt-2 small fw-semibold text-secondary">
+                <span class="d-flex align-items-center gap-1"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" class="text-success"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg> Trust. Care. Commitment.</span>
+                <span class="d-flex align-items-center gap-1"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" class="text-success"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg> Protecting You, Every Step.</span>
+                <span class="d-flex align-items-center gap-1"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" class="text-success"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg> Always With You.</span>
+            </div>
+        </div>
+
+        <!-- Graph Container -->
+        <div class="bg-white rounded-4 shadow-sm border border-light-subtle p-2 p-md-4 mb-5 position-relative">
+            <!-- Background highlight column for COVID (2020) -->
+            <div class="position-absolute d-none d-md-block" style="left: 49.5%; top: 0; bottom: 0; width: 6%; background-color: rgba(227, 52, 47, 0.05); z-index: 0; pointer-events: none; transform: translateX(-50%);"></div>
+            <div id="claimGrowthChart" style="min-height: 450px; z-index: 1; position: relative;"></div>
+        </div>
+
+        <!-- Stats row -->
+        <div class="row g-4 text-center justify-content-center">
+            <div class="col-md-3">
+                <div class="d-flex flex-column flex-md-row align-items-center justify-content-center gap-3 p-4 bg-white rounded-4 h-100 border border-light-subtle shadow-sm transition-all hover-translate-y">
+                    <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 60px; height: 60px;">
+                        <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                    </div>
+                    <div class="text-md-start">
+                        <div class="small text-primary-custom fw-bold tracking-wide">TOTAL GROWTH</div>
+                        <div class="fs-3 fw-bold text-success mb-1">531.05%</div>
+                        <div class="small text-muted" style="font-size: 0.75rem;">(2015 TO 2025)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="d-flex flex-column flex-md-row align-items-center justify-content-center gap-3 p-4 bg-white rounded-4 h-100 border border-light-subtle shadow-sm transition-all hover-translate-y">
+                    <div class="bg-primary-custom text-white rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 60px; height: 60px;">
+                        <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"></path></svg>
+                    </div>
+                    <div class="text-md-start">
+                        <div class="small text-primary-custom fw-bold tracking-wide">STARTING VALUE</div>
+                        <div class="fs-3 fw-bold text-primary-custom mb-1">100.00</div>
+                        <div class="small text-muted" style="font-size: 0.75rem;">INDEX (2015)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="d-flex flex-column flex-md-row align-items-center justify-content-center gap-3 p-4 bg-white rounded-4 h-100 border border-light-subtle shadow-sm transition-all hover-translate-y">
+                    <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 60px; height: 60px;">
+                        <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    </div>
+                    <div class="text-md-start">
+                        <div class="small text-primary-custom fw-bold tracking-wide">ENDING VALUE</div>
+                        <div class="fs-3 fw-bold text-primary-custom mb-1">631.05</div>
+                        <div class="small text-muted" style="font-size: 0.75rem;">INDEX (2025)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="d-flex flex-column flex-md-row align-items-center justify-content-center gap-3 p-4 bg-white rounded-4 h-100 border border-light-subtle shadow-sm transition-all hover-translate-y">
+                    <div class="bg-primary-custom text-white rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 60px; height: 60px;">
+                        <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                    </div>
+                    <div class="text-md-start">
+                        <div class="small text-primary-custom fw-bold tracking-wide">CAGR</div>
+                        <div class="fs-3 fw-bold text-success mb-1">20.78%</div>
+                        <div class="small text-muted" style="font-size: 0.75rem;">(2015 TO 2025)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- App Screenshots Slider -->
 <section class="app-slider-section">
     <div class="container text-center mb-5">
@@ -660,11 +736,41 @@
                     <div class="brand-overlay">Bima Seva</div>
                     <img src="https://riskbirbal.com/assets/images/sets/risk-assessment.webp" alt="Risk Assessment & Mitigation">
                 </div>
+                <!-- Duplicated slides to ensure Swiper has enough elements to loop seamlessly when slidesPerView is auto -->
+                <div class="swiper-slide">
+                    <div class="brand-overlay">Bima Seva</div>
+                    <img src="https://riskbirbal.com/assets/images/sets/easy-navigation.webp" alt="Easy Navigation">
+                </div>
+                <div class="swiper-slide">
+                    <div class="brand-overlay">Bima Seva</div>
+                    <img src="https://riskbirbal.com/assets/images/sets/demystifying.webp" alt="Demystifying Insurance">
+                </div>
+                <div class="swiper-slide">
+                    <div class="brand-overlay">Bima Seva</div>
+                    <img src="https://riskbirbal.com/assets/images/sets/insight.webp" alt="Insight & Advice">
+                </div>
+                <div class="swiper-slide">
+                    <div class="brand-overlay">Bima Seva</div>
+                    <img src="https://riskbirbal.com/assets/images/sets/risk-assessment.webp" alt="Risk Assessment & Mitigation">
+                </div>
             </div>
             <div class="swiper-pagination mt-5"></div>
         </div>
     </div>
 </section>
+
+<style>
+/* Swiper slide scaling effect for active vs non-active */
+.swiper-container-app .swiper-slide {
+    transition: transform 0.6s ease, opacity 0.6s ease !important;
+    transform: scale(0.75) !important;
+    opacity: 0.5 !important;
+}
+.swiper-container-app .swiper-slide-active {
+    transform: scale(1) !important;
+    opacity: 1 !important;
+}
+</style>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
@@ -674,11 +780,12 @@ document.addEventListener('DOMContentLoaded', function() {
         grabCursor: true,
         centeredSlides: true,
         slidesPerView: 'auto',
-        initialSlide: 1,
+        initialSlide: 0,
         spaceBetween: 30,
         loop: true,
+        speed: 600, // Speed of the swipe animation
         autoplay: {
-            delay: 4000,
+            delay: 3000, // Time it waits before swiping to the next image
             disableOnInteraction: false,
         },
         pagination: {
@@ -707,6 +814,36 @@ document.addEventListener('DOMContentLoaded', function() {
                 <span class="fs-4 fw-black text-warning tracking-tight" style="font-family: Arial, sans-serif;">ICICI</span>
                 <span class="fs-4 fw-semibold text-dark ms-1" style="font-family: Arial, sans-serif;">Lombard</span>
             </div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2017/09/Tata-AIA-Life-Insurance.jpg" alt="Tata AIA Life Insurance"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2022/12/3-1.png" alt="Partner 3"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2017/09/SBI-Life-Insurance.jpg" alt="SBI Life Insurance"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2017/09/Life-Insurance-Corporation-of-India.jpg" alt="Life Insurance Corporation of India"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2017/09/Future-Generali-India-Life-Insurance1.jpg" alt="Future Generali India Life Insurance"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2017/09/Edelweiss-Tokio-Life-Insurance1.jpg" alt="Edelweiss Tokio Life Insurance"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2017/09/Bajaj-Allianz-Life-Insurance.jpg" alt="Bajaj Allianz Life Insurance"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2017/09/liberty-videocon-general-insurance.jpg" alt="Liberty Videocon General Insurance"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2017/09/cholamandlam-general-insurance.jpg" alt="Cholamandalam General Insurance"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2017/09/royal-sundram-general-insurance.jpg" alt="Royal Sundaram General Insurance"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2017/09/united-india-general-insurance.jpg" alt="United India General Insurance"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2022/12/1-3.png" alt="Partner 1"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2022/12/download-2.png" alt="Partner 2"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2024/03/1.png" alt="Partner Logo 1"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2024/03/2.png" alt="Partner Logo 2"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2024/03/3.png" alt="Partner Logo 3"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2024/03/4.png" alt="Partner Logo 4"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2024/03/5.png" alt="Partner Logo 5"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2024/03/6.png" alt="Partner Logo 6"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2024/03/8.png" alt="Partner Logo 8"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2024/03/9.png" alt="Partner Logo 9"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2024/03/10.png" alt="Partner Logo 10"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2024/03/11.png" alt="Partner Logo 11"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2024/03/12.png" alt="Partner Logo 12"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2024/03/13.png" alt="Partner Logo 13"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2024/03/14.png" alt="Partner Logo 14"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2024/03/15.png" alt="Partner Logo 15"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2024/03/16.png" alt="Partner Logo 16"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2024/03/17.png" alt="Partner Logo 17"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2024/03/18.png" alt="Partner Logo 18"></div>
             <!-- Duplicated Set for infinite scroll -->
             <div class="marquee-item"><img src="https://upload.wikimedia.org/wikipedia/commons/1/14/Niva_Bupa_Logo.jpg" alt="Niva Bupa"></div>
             <div class="marquee-item"><img src="https://upload.wikimedia.org/wikipedia/commons/9/90/Care_health_insurance_logo.png" alt="Care Health Insurance"></div>
@@ -718,6 +855,36 @@ document.addEventListener('DOMContentLoaded', function() {
                 <span class="fs-4 fw-black text-warning tracking-tight" style="font-family: Arial, sans-serif;">ICICI</span>
                 <span class="fs-4 fw-semibold text-dark ms-1" style="font-family: Arial, sans-serif;">Lombard</span>
             </div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2017/09/Tata-AIA-Life-Insurance.jpg" alt="Tata AIA Life Insurance"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2022/12/3-1.png" alt="Partner 3"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2017/09/SBI-Life-Insurance.jpg" alt="SBI Life Insurance"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2017/09/Life-Insurance-Corporation-of-India.jpg" alt="Life Insurance Corporation of India"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2017/09/Future-Generali-India-Life-Insurance1.jpg" alt="Future Generali India Life Insurance"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2017/09/Edelweiss-Tokio-Life-Insurance1.jpg" alt="Edelweiss Tokio Life Insurance"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2017/09/Bajaj-Allianz-Life-Insurance.jpg" alt="Bajaj Allianz Life Insurance"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2017/09/liberty-videocon-general-insurance.jpg" alt="Liberty Videocon General Insurance"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2017/09/cholamandlam-general-insurance.jpg" alt="Cholamandalam General Insurance"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2017/09/royal-sundram-general-insurance.jpg" alt="Royal Sundaram General Insurance"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2017/09/united-india-general-insurance.jpg" alt="United India General Insurance"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2022/12/1-3.png" alt="Partner 1"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2022/12/download-2.png" alt="Partner 2"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2024/03/1.png" alt="Partner Logo 1"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2024/03/2.png" alt="Partner Logo 2"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2024/03/3.png" alt="Partner Logo 3"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2024/03/4.png" alt="Partner Logo 4"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2024/03/5.png" alt="Partner Logo 5"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2024/03/6.png" alt="Partner Logo 6"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2024/03/8.png" alt="Partner Logo 8"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2024/03/9.png" alt="Partner Logo 9"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2024/03/10.png" alt="Partner Logo 10"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2024/03/11.png" alt="Partner Logo 11"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2024/03/12.png" alt="Partner Logo 12"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2024/03/13.png" alt="Partner Logo 13"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2024/03/14.png" alt="Partner Logo 14"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2024/03/15.png" alt="Partner Logo 15"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2024/03/16.png" alt="Partner Logo 16"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2024/03/17.png" alt="Partner Logo 17"></div>
+            <div class="marquee-item"><img src="https://mialtus.in/wp-content/uploads/2024/03/18.png" alt="Partner Logo 18"></div>
         </div>
     </div>
 </section>
@@ -853,6 +1020,194 @@ document.addEventListener('DOMContentLoaded', function() {
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    if(document.querySelector("#claimGrowthChart")) {
+        var options = {
+            series: [{
+                name: "Claim Settlement Amount",
+                data: [100.00, 107.50, 115.56, 124.23, 133.55, 181.61, 236.10, 269.13, 347.16, 478.67, 631.05]
+            }],
+            chart: {
+                type: 'area',
+                height: 450,
+                fontFamily: 'Outfit, sans-serif',
+                toolbar: {
+                    show: false
+                },
+                animations: {
+                    enabled: true,
+                    easing: 'easeinout',
+                    speed: 2500,
+                    animateGradually: {
+                        enabled: true,
+                        delay: 400
+                    },
+                    dynamicAnimation: {
+                        enabled: true,
+                        speed: 350
+                    }
+                }
+            },
+            colors: ['#1a365d'],
+            dataLabels: {
+                enabled: true,
+                formatter: function (val, opts) {
+                    let percentages = ["", "7.5%", "7.5%", "7.5%", "7.5%", "36%", "30%", "14%", "29%", "38%", "32%"];
+                    let pct = percentages[opts.dataPointIndex];
+                    if (pct !== "") {
+                        return [pct, val.toFixed(2)];
+                    } else {
+                        return [val.toFixed(2)];
+                    }
+                },
+                offsetY: -15,
+                style: {
+                    fontSize: '12px',
+                    fontFamily: 'Outfit, sans-serif',
+                    fontWeight: 'bold',
+                    colors: ["#1a365d"]
+                },
+                background: {
+                    enabled: false,
+                }
+            },
+            stroke: {
+                curve: 'smooth',
+                width: 3,
+                colors: ['#1a365d']
+            },
+            fill: {
+                type: 'gradient',
+                gradient: {
+                    shadeIntensity: 1,
+                    opacityFrom: 0.4,
+                    opacityTo: 0.0,
+                    stops: [0, 90, 100]
+                }
+            },
+            markers: {
+                size: 6,
+                colors: ["#1a365d"],
+                strokeColors: "#fff",
+                strokeWidth: 2,
+                hover: {
+                    size: 8,
+                },
+                discrete: [{
+                    seriesIndex: 0,
+                    dataPointIndex: 5,
+                    fillColor: '#e3342f',
+                    strokeColor: '#fff',
+                    size: 8
+                }]
+            },
+            xaxis: {
+                categories: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'],
+                title: {
+                    text: 'YEAR',
+                    offsetY: 10,
+                    style: {
+                        fontWeight: 700,
+                        color: '#1a365d',
+                        fontSize: '14px'
+                    }
+                },
+                labels: {
+                    style: {
+                        fontWeight: 600,
+                        colors: '#1a365d'
+                    }
+                },
+                axisBorder: {
+                    show: true,
+                    color: '#1a365d',
+                },
+                axisTicks: {
+                    show: true,
+                    color: '#1a365d',
+                }
+            },
+            yaxis: {
+                title: {
+                    text: 'CLAIM SETTLEMENT AMOUNT (INDEX)',
+                    style: {
+                        fontWeight: 700,
+                        color: '#1a365d',
+                        fontSize: '12px'
+                    }
+                },
+                labels: {
+                    style: {
+                        fontWeight: 600,
+                        colors: '#1a365d'
+                    }
+                },
+                min: 50,
+                max: 700,
+                tickAmount: 13
+            },
+            grid: {
+                borderColor: '#f1f1f1',
+                strokeDashArray: 4,
+                yaxis: {
+                    lines: {
+                        show: true
+                    }
+                }
+            },
+            annotations: {
+                points: [{
+                    x: '2020',
+                    y: 181.61,
+                    marker: {
+                        size: 0
+                    },
+                    label: {
+                        borderColor: '#e3342f',
+                        borderWidth: 1,
+                        borderRadius: 5,
+                        style: {
+                            color: '#e3342f',
+                            background: '#fff',
+                            fontSize: '12px',
+                            fontWeight: 'bold',
+                            padding: {
+                                left: 10,
+                                right: 10,
+                                top: 8,
+                                bottom: 8,
+                            }
+                        },
+                        text: 'COVID\nA Challenging Year\nThat Strengthened\nOur Commitment',
+                        offsetY: -60
+                    }
+                }]
+            },
+            tooltip: {
+                y: {
+                    formatter: function (val) {
+                        return val.toFixed(2)
+                    }
+                }
+            }
+        };
+
+        var chart = new ApexCharts(document.querySelector("#claimGrowthChart"), options);
+        
+        // Use IntersectionObserver to start animation only when visible
+        var observer = new IntersectionObserver(function(entries) {
+            if(entries[0].isIntersecting) {
+                chart.render();
+                observer.disconnect(); // Stop observing once rendered
+            }
+        }, { threshold: 0.2 }); // Trigger when 20% of chart is visible
+        
+        observer.observe(document.querySelector("#claimGrowthChart"));
+    }
+});
+</script>
 <script src="assets/js/script.js"></script>
 </body>
 </html>
